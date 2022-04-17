@@ -1,0 +1,21 @@
+
+
+Difference between Decorator Pattern and Kotlin Extension
+
+This seems to be a question of design reasoning or philosophy. First decorator Pattern is better known as Wrapper Classes.
+The wrapper/decorator does this so that you conceal details from the user of feature (which is being wrapped)/wrappee,
+add or make some change to a feature of the wrappee. And then it adds a layer of abstraction. With this abstraction it
+allows easy change of wrappee class in future if needed. In your example I do not see the purpose of ShapeDecorator/ShapeWrapper -
+ What is it really wrapping and for what purpose? - Interface itself is a contract.
+
+In Kotlin by default all classes & functions are final and closed. This was done to enforce some of the effective
+Java Principles (Joshua Bloch). Thus again enforcing you to not inherit the class but use Wrapper Pattern or Extension.
+
+So now for the difference between Extension and Wrapper. If u just need to extend to add some functionality
+that the original creator of the base class missed out and you can not make changes in the base class or feel
+ it not the right place to do that then u are going for Extension Function. It is not concealing anything,
+ not adding any abstraction layer (one or more). But if it is for the purpose of the abstraction, decoration
+ then u go for decorator. Extension functions do not replace decorator pattern. It can be avoided if not needed.
+
+Also Extension fun by statically dispatched - In very very simple words they become static methods in java
+decompilation (Thus u see again that abstraction is missing).
