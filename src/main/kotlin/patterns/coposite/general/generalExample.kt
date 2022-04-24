@@ -17,4 +17,5 @@ fun main(){
     container.add(container2)
 
     container.print()
+    println(container.size)
 }

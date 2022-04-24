@@ -4,6 +4,9 @@ class Composite(private val name:String): Component {
 
     var componentList:MutableList<Component> = mutableListOf()
 
+    override val size: Int
+        get() = componentList.map { it.size }.sum() + 1
+
     override fun operation() {
 
     }
